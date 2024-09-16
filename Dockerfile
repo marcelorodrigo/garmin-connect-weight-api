@@ -2,7 +2,7 @@ FROM eclipse-temurin:21.0.4_7-jdk-alpine AS build
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
 COPY . /opt/app
-RUN ./mvnw -e -B package --DskipTests --no-transfer-progress
+RUN ./mvnw -e -B package -Dmaven.test.skip=true --no-transfer-progress
 
 FROM eclipse-temurin:21.0.4_7-jre-alpine
 RUN mkdir -p /opt/app
