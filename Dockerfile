@@ -8,5 +8,7 @@ FROM eclipse-temurin:21.0.4_7-jre-alpine
 RUN mkdir -p /opt/app
 COPY --from=build /opt/app/target/garmin-connect-weight-api.jar /opt/app
 
+ENV PORT 8080
+EXPOSE $PORT
+
 ENTRYPOINT ["java","-jar","/opt/app/garmin-connect-weight-api.jar"]
-EXPOSE 8080
