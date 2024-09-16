@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "weight": {
+      "type": "number",
+      "description": "The weight in kilograms",
+      "minimum": 0
+    },
+    "percentFat": {
+      "type": "number",
+      "description": "The fat percentage",
+      "minimum": 0
+    },
+    "percentHydration": {
+      "type": "number",
+      "description": "The hydration percentage",
+      "minimum": 0
+    },
+    "boneMass": {
+      "type": "number",
+      "description": "The bone mass in kilograms",
+      "minimum": 0
+    },
+    "muscleMass": {
+      "type": "number",
+      "description": "The muscle mass in kilograms",
+      "minimum": 0
+    },
+    "physiqueRating": {
+      "type": "integer",
+      "description": "The physique rating",
+      "minimum": 0
+    },
+    "metabolicAge": {
+      "type": "integer",
+      "description": "The metabolic age",
+      "minimum": 0
+    },
+    "visceralFatRating": {
+      "type": "integer",
+      "description": "The visceral fat rating",
+      "minimum": 0
+    },
+    "userProfileIndex": {
+      "type": "integer",
+      "description": "The user profile index",
+      "minimum": 0
+    },
+    "bmi": {
+      "type": "number",
+      "description": "The body mass index",
+      "minimum": 0
+    }
+  },
+  "required": ["weight"]
+}

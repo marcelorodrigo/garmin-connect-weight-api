@@ -53,3 +53,8 @@ This endpoint receives a JSON payload with the following fields:
 
 
 The response will be a Garmin `.FIT` file that can be uploaded to Garmin Connect.
+
+### JSON Schema
+The JSON schema for the `/weight` endpoint request body can be found [here](doc/json-schema.json).
+
+
