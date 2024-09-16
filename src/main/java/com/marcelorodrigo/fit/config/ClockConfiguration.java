@@ -9,7 +9,6 @@ import java.time.ZoneId;
 @Configuration
 public class ClockConfiguration {
 
-    @Bean
     public ZoneId getDefaultZone() {
         return ZoneId.of("UTC");
     }
