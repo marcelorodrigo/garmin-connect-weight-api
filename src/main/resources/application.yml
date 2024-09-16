@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: garmin-connect-weight-api
+  main:
+    banner-mode: off
+  threads:
+    virtual:
+      enabled: true
