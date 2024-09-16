@@ -1,0 +1,97 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "https://garmin-connect-weight-api.onrender.com",
+      "description": "Production Server"
+    }
+  ],
+  "paths": {
+    "/weight": {
+      "post": {
+        "tags": [
+          "Weight"
+        ],
+        "summary": "Creates a weight measurement",
+        "operationId": "create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WeightMeasurement"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Weight measurement generated",
+            "content": {
+              "application/octet-stream": {}
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "WeightMeasurement": {
+        "type": "object",
+        "properties": {
+          "weight": {
+            "type": "number",
+            "format": "float"
+          },
+          "percentFat": {
+            "type": "number",
+            "format": "float"
+          },
+          "percentHydration": {
+            "type": "number",
+            "format": "float"
+          },
+          "boneMass": {
+            "type": "number",
+            "format": "float"
+          },
+          "muscleMass": {
+            "type": "number",
+            "format": "float"
+          },
+          "physiqueRating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "metabolicAge": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "visceralFatRating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userProfileIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bmi": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      }
+    }
+  }
+}
