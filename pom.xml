@@ -15,6 +15,9 @@
     <description>Generates a FIT file with your body measurements that you can input on Garmin Connect</description>
     <properties>
         <java.version>21</java.version>
+        <sonar.organization>marcelorodrigo</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.project.key>marcelorodrigo_garmin-connect-weight-api</sonar.project.key>
     </properties>
     <dependencies>
         <dependency>
