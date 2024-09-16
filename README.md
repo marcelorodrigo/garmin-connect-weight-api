@@ -18,6 +18,7 @@ https://garmin-connect-weight-api.onrender.com
 ```
 
 # API
+The [OpenAPI specification](doc/openapi.yml) is available if you want to integrate your frontend to this project.
 
 ```
 POST /weight
