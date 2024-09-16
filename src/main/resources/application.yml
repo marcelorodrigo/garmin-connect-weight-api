@@ -8,4 +8,4 @@ spring:
   threads:
     virtual:
       enabled: true
-keep-alive: ${RENDER_EXTERNAL_HOSTNAME:https://localhost:8080}
+keep-alive: ${RENDER_EXTERNAL_URL:https://localhost:8080}
