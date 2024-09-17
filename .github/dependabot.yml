@@ -4,7 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "tuesda"
+      day: "tuesday"
       time: "09:00"
       timezone: "Europe/Amsterdam"
   - package-ecosystem: "github-actions"
