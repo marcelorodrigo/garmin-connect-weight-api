@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesda"
+      time: "09:00"
+      timezone: "Europe/Amsterdam"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "09:05"
+      timezone: "Europe/Amsterdam"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "09:10"
+      timezone: "Europe/Amsterdam"
