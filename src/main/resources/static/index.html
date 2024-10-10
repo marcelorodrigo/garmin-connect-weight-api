@@ -151,7 +151,8 @@
             boneMass: boneMass ? parseFloat(boneMass) : undefined,
             muscleMass: muscleMass ? parseFloat(muscleMass) : undefined,
             metabolicAge: metabolicAge ? parseInt(metabolicAge) : undefined,
-            userProfileIndex: 0
+            userProfileIndex: 0,
+            timestamp: new Date().toISOString()
         };
 
         // Remove undefined fields
