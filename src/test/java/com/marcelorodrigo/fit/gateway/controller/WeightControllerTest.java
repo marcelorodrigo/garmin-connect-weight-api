@@ -47,7 +47,7 @@ class WeightControllerTest {
         Files.write(tempFile, "dummy content".getBytes());
 
         // Mock the fitWeight to return the path to the temporary file
-        when(fitWeight.create(fixedInstant, WeightMeasurement.builder().weight(100.1f).build())).thenReturn(tempFile);
+        when(fitWeight.create(WeightMeasurement.builder().weight(100.1f).timestamp(fixedInstant).build())).thenReturn(tempFile);
 
         mockMvc.perform(post("/weight")
                         .contentType(MediaType.APPLICATION_JSON)

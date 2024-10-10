@@ -18,6 +18,7 @@ https://garmin-connect-weight-api.onrender.com
 ```
 
 # API
+
 The [OpenAPI specification](doc/openapi.yml) is available if you want to integrate your frontend to this project.
 
 ```
@@ -37,7 +38,8 @@ This endpoint receives a JSON payload with the following fields:
   "metabolicAge": 30,
   "visceralFatRating": 5,
   "userProfileIndex": 0,
-  "bmi": 22.0
+  "bmi": 22.0,
+  "timestamp": "2024-10-10T19:06:25.420Z"
 }
 ```
 
@@ -51,11 +53,10 @@ This endpoint receives a JSON payload with the following fields:
 - `visceralFatRating` (optional): The visceral fat rating.
 - `userProfileIndex` (optional): The user profile index.
 - `bmi` (optional): The body mass index.
-
+- `timestamp` (optional): The timestamp of the measurement.
 
 The response will be a Garmin `.FIT` file that can be uploaded to Garmin Connect.
 
 ### JSON Schema
+
 The JSON schema for the `/weight` endpoint request body can be found [here](doc/json-schema.json).
-
-
