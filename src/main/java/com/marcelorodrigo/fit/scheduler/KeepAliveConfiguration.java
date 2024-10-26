@@ -17,7 +17,7 @@ public class KeepAliveConfiguration {
     private final RestTemplate restTemplate;
     private final KeepAliveProperties keepAliveProperties;
 
-    @Scheduled(fixedRate = 32_456, initialDelay = 120_000)
+    @Scheduled(cron = "0 */5 6-9 * * ?", zone = "Europe/Amsterdam")
     public void keepAliveAtRenderDotCom() {
         try {
             val response = restTemplate.getForEntity(keepAliveProperties.url(), String.class);
