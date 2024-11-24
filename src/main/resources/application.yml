@@ -7,6 +7,7 @@ spring:
     name: garmin-connect-weight-api
   main:
     banner-mode: off
+    lazy-initialization: true
   threads:
     virtual:
       enabled: true
