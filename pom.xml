@@ -32,7 +32,7 @@
         <dependency>
             <groupId>com.garmin</groupId>
             <artifactId>fit</artifactId>
-            <version>21.141.0</version>
+            <version>21.158.0</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>

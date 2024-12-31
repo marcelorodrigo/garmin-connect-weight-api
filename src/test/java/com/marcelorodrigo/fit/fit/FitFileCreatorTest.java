@@ -32,7 +32,7 @@ class FitFileCreatorTest {
         // Assert
         assertThat(fitFilePath).isNotNull();
         assertThat(Files.exists(fitFilePath)).isTrue();
-        assertThat(Files.size(fitFilePath)).isGreaterThan(0);
+        assertThat(Files.size(fitFilePath)).isPositive();
 
         // Assert the decoded file using garmin fit sdk
         val decode = new Decode();
