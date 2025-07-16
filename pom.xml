@@ -89,6 +89,10 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>5.1.0.4751</version>
             </plugin>
+            <plugin>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>native-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
 </project>
