@@ -2,7 +2,7 @@ FROM ghcr.io/graalvm/graalvm-community:21.0.2 AS build
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
 COPY . /opt/app
-RUN ./mvnw -e -B package -Dmaven.test.skip=true --no-transfer-progress
+RUN ./mvnw -e -B -Dmaven.test.skip=true --no-transfer-progress -Pnative native:compile
 
 FROM alpine:3.22.1
 RUN mkdir -p /opt/app
