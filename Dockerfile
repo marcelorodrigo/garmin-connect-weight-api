@@ -8,7 +8,11 @@ COPY .mvn .mvn
 COPY pom.xml ./
 
 # Download dependencies first (this layer will be cached)
-RUN ./mvnw -e -B dependency:go-offline --no-transfer-progress
+RUN ./mvnw -e -B \
+    -Dmaven.test.skip=true \
+    dependency:go-offline \
+    dependency:resolve-plugins \
+    --no-transfer-progress
 
 # Now copy the source code (this layer changes frequently)
 COPY src ./src
