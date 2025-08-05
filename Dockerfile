@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21.0.7_6-jdk-alpine AS build
+FROM eclipse-temurin:21.0.8_9-jdk-alpine AS build
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
 
