@@ -3,7 +3,6 @@ package com.marcelorodrigo.fit.fit;
 import com.garmin.fit.DateTime;
 import com.garmin.fit.WeightScaleMesg;
 import com.marcelorodrigo.fit.domain.WeightMeasurement;
-import lombok.val;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -11,7 +10,7 @@ import java.util.Objects;
 @Component
 public class GenerateWeightScaleMesg {
     public WeightScaleMesg execute(final DateTime timeCreated, final WeightMeasurement weight) {
-        val weightScale = new WeightScaleMesg();
+        final var weightScale = new WeightScaleMesg();
         weightScale.setTimestamp(timeCreated);
         weightScale.setWeight(weight.weight());
         if (Objects.nonNull(weight.percentFat())) {

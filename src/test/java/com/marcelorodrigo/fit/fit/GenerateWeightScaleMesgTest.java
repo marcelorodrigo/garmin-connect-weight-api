@@ -2,7 +2,6 @@ package com.marcelorodrigo.fit.fit;
 
 import com.garmin.fit.DateTime;
 import com.marcelorodrigo.fit.domain.WeightMeasurement;
-import lombok.val;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,8 +10,8 @@ class GenerateWeightScaleMesgTest {
     @Test
     void generate() {
         // Arrange
-        val timeCreated = new DateTime(1234519810L);
-        val weightMeasurement = WeightMeasurement.builder()
+        final var timeCreated = new DateTime(1234519810L);
+        final var weightMeasurement = WeightMeasurement.builder()
                 .weight(70.5f)
                 .percentFat(15.0f)
                 .percentHydration(60.0f)
@@ -21,7 +20,7 @@ class GenerateWeightScaleMesgTest {
                 .build();
 
         // Act
-        val weightScaleMesg = new GenerateWeightScaleMesg().execute(timeCreated, weightMeasurement);
+        final var weightScaleMesg = new GenerateWeightScaleMesg().execute(timeCreated, weightMeasurement);
 
         // Assert
         assertThat(weightScaleMesg).isNotNull();

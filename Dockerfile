@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21.0.9_10-jdk-alpine AS build
+FROM eclipse-temurin:25.0.1_8-jdk-alpine AS build
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
 
@@ -17,10 +17,9 @@ RUN ./mvnw -e -B \
 # Now copy the source code (this layer changes frequently)
 COPY src ./src
 
-
 RUN ./mvnw -e -B package -Dmaven.test.skip=true --no-transfer-progress
 
-FROM gcr.io/distroless/java21-debian12:nonroot
+FROM gcr.io/distroless/java25-debian13:nonroot
 COPY --from=build /opt/app/target/garmin-connect-weight-api.jar /opt/app/garmin-connect-weight-api.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/opt/app/garmin-connect-weight-api.jar"]
