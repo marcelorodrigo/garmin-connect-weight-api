@@ -1,7 +1,6 @@
 package com.marcelorodrigo.fit.fit;
 
 import com.garmin.fit.DateTime;
-import lombok.val;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,11 +9,11 @@ class GenerateFileIdMesgTest {
     @Test
     void execute() {
         // Arrange
-        val generateFileIdMesg = new GenerateFileIdMesg();
-        val timeCreated = new DateTime(1234567890L);
+        final var generateFileIdMesg = new GenerateFileIdMesg();
+        final var timeCreated = new DateTime(1234567890L);
 
         // Act
-        val fileIdMesg = generateFileIdMesg.execute(timeCreated);
+        final var fileIdMesg = generateFileIdMesg.execute(timeCreated);
 
         // Assert
         assertThat(fileIdMesg).isNotNull();

@@ -1,7 +1,6 @@
 package com.marcelorodrigo.fit.fit;
 
 import com.garmin.fit.*;
-import lombok.val;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -35,10 +34,10 @@ class FitFileCreatorTest {
         assertThat(Files.size(fitFilePath)).isPositive();
 
         // Assert the decoded file using garmin fit sdk
-        val decode = new Decode();
-        val mesgBroadcaster = new MesgBroadcaster(decode);
-        val fileIdMesgs = new ArrayList<Mesg>(1);
-        val weightScaleMesgs = new ArrayList<Mesg>(1);
+        final var decode = new Decode();
+        final var mesgBroadcaster = new MesgBroadcaster(decode);
+        final var fileIdMesgs = new ArrayList<Mesg>(1);
+        final var weightScaleMesgs = new ArrayList<Mesg>(1);
 
         mesgBroadcaster.addListener((MesgListener) mesg -> {
             if (mesg.getNum() == MesgNum.FILE_ID) {
@@ -48,7 +47,7 @@ class FitFileCreatorTest {
             }
         });
 
-        try (val inputStream = Files.newInputStream(fitFilePath)) {
+        try (final var inputStream = Files.newInputStream(fitFilePath)) {
             decode.read(inputStream, mesgBroadcaster);
         }
 
