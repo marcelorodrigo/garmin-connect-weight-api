@@ -142,14 +142,14 @@
         }
 
         const data = {
-            weight: parseFloat(weight),
-            bmi: bmi ? parseFloat(bmi) : undefined,
-            percentFat: percentFat ? parseFloat(percentFat) : undefined,
-            visceralFatRating: visceralFat ? parseInt(visceralFat) : undefined,
-            percentHydration: percentHydration ? parseFloat(percentHydration) : undefined,
-            boneMass: boneMass ? parseFloat(boneMass) : undefined,
-            muscleMass: muscleMass ? parseFloat(muscleMass) : undefined,
-            metabolicAge: metabolicAge ? parseInt(metabolicAge) : undefined,
+            weight: Number.parseFloat(weight),
+            bmi: bmi ? Number.parseFloat(bmi) : undefined,
+            percentFat: percentFat ? Number.parseFloat(percentFat) : undefined,
+            visceralFatRating: visceralFat ? Number.parseInt(visceralFat) : undefined,
+            percentHydration: percentHydration ? Number.parseFloat(percentHydration) : undefined,
+            boneMass: boneMass ? Number.parseFloat(boneMass) : undefined,
+            muscleMass: muscleMass ? Number.parseFloat(muscleMass) : undefined,
+            metabolicAge: metabolicAge ? Number.parseInt(metabolicAge) : undefined,
             userProfileIndex: 0,
             timestamp: new Date().toISOString()
         };
@@ -178,10 +178,10 @@
                 const blob = new Blob([data], { type: 'application/octet-stream' });
                 const link = document.createElement('a');
                 link.download = fileName;
-                link.href = window.URL.createObjectURL(blob);
+                link.href = globalThis.URL.createObjectURL(blob);
                 document.body.appendChild(link);
                 link.click();
-                document.body.removeChild(link);
+                link.remove();
             }
 
             if (response.ok) {
