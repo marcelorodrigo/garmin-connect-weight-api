@@ -3,7 +3,6 @@ package com.marcelorodrigo.fit.fit;
 import com.garmin.fit.*;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class FitFileCreatorTest {
 
     @Test
-    void execute_createsFitFile() throws IOException {
+    void execute_createsFitFile() throws Exception {
         // Arrange
         FileIdMesg fileIdMesg = new FileIdMesg();
         fileIdMesg.setType(com.garmin.fit.File.WEIGHT);

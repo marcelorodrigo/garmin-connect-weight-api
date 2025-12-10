@@ -16,7 +16,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.time.Clock;
 import java.time.Instant;
@@ -46,7 +45,7 @@ class FitWeightTest {
     FitWeight fitWeight;
 
     @Test
-    void create_createsFitFile() throws IOException {
+    void create_createsFitFile() throws Exception {
         // Given
         final var givenInstant = Instant.parse("2021-01-01T00:00:00Z");
         final var weightMeasurement = WeightMeasurement.builder().weight(70f).build();
