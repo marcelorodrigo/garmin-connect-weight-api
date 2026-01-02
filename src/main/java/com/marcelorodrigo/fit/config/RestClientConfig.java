@@ -2,12 +2,12 @@ package com.marcelorodrigo.fit.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClient;
 
 @Configuration
-public class RestTemplateConfig {
+public class RestClientConfig {
     @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
+    public RestClient restClient() {
+        return RestClient.builder().build();
     }
 }
